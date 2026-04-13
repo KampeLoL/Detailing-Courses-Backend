@@ -1,12 +1,12 @@
 from flask import Flask
+from flask import render_template
+
 app = Flask(__name__)
 @app.route('/')
-def главная():
-    return '''<h1>Привет! Ты на курсах по детейлингу!</h1>
-           <p>приступим</p>
-           '''
+def index():
+    return render_template('index.html')
 @app.route('/courses')
-def курсы():
+def courses():
     return 'это твои курсы'
 if __name__=='__main__':
     app.run(debug=True)
